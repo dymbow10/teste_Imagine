@@ -1,0 +1,47 @@
+<mvc:View 
+controllerName="sap.ui.demo.walkthrough.controller.InvoiceList" 
+xmlns="sap.m"
+xmlns:mvc="sap.ui.core.mvc">
+    <Table id="productList"
+		inset="false"
+		items="{
+			path: 'list>/',
+			sorter: {
+				path: 'Name'
+			}
+		}">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Listagem de notas Fiscais" level="H2"/>
+					<ToolbarSpacer />
+					<SearchField width="70%" search="onSearch" />
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column
+				width="12em">
+				<Text text="Nome" />
+			</Column>
+            <Column
+				width="12em">
+				<Text text="Checado" />
+			</Column>
+            <Column
+				width="12em">
+				<Text text="Detalhes" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem vAlign="Middle">
+				<cells>
+					<ObjectIdentifier
+						title="{list>title}"/>
+                    <CheckBox selected="{list>completed}" />
+                    <Link text="Detalhes" press="onDetailsPress"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</mvc:View>
