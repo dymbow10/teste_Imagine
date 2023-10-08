@@ -23,7 +23,7 @@ sap.ui.define([
         },
         onSearch: function (event) {
           var filters=[];
-          var query=event.getParamater("query");
+          var query=event.getParameter("query");
           if(query){
             filters.push(new Filter("title", FilterOperator.Contains, query));
           }
